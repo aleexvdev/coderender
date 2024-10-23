@@ -2,7 +2,7 @@ import { Header } from "@/components/layout/Header";
 
 export default function Home() {
   return (
-    <main className="w-full max-w-screen-2xl mx-auto">
+    <main className="w-screen h-screen px-2 md:px-4 overflow-hidden">
       <Header />
     </main>
   );
