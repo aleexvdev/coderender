@@ -69,7 +69,7 @@ export const ExportOption = () => {
             onChange={(value) => {
               dispatch(setExportFormat(value as ExportFormat));
             }}
-            className="mt-4"
+            className="mt-4 h-max p-1 bg-[#EEEEEE] dark:bg-[#272727]"
           />
           <p className="font-medium text-lg md:text-xl text-muted-foreground w-full text-left mt-4">
             Escala
@@ -80,7 +80,7 @@ export const ExportOption = () => {
             onChange={(value) => {
               dispatch(setExportScale(value as ExportScale));
             }}
-            className="mt-4"
+            className="mt-4 h-max p-1 bg-[#EEEEEE] dark:bg-[#272727]"
           />
         </div>
       </DialogContent>

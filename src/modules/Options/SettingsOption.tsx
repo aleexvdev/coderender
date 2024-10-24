@@ -50,7 +50,7 @@ export const SettingsOption = () => {
             options={themesOptions}
             activeOption={theme as string}
             onChange={setTheme}
-            className="mt-4"
+            className="mt-4 h-max p-1 bg-[#EEEEEE] dark:bg-[#272727]"
           />
         </div>
       </DialogContent>

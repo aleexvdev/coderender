@@ -35,8 +35,8 @@ export const AnimatedTabSwitcher = ({
   const width = `${100 / options.length}%`;
 
   return (
-    <div className={`w-full h-max p-1 rounded-lg bg-[#EEEEEE] dark:bg-[#272727] ${className}`}>
-      <div className="relative w-full flex gap-3 flex-1 h-full overflow-hidden">
+    <div className={`w-full rounded-lg ${className}`}>
+      <div className="relative w-full flex flex-1 h-full overflow-hidden">
         {options.map((item) => (
           <div
             key={item.id}
@@ -61,10 +61,10 @@ export const AnimatedTabSwitcher = ({
               onClick={() => onChange(item.value)}
             >
               <span 
-                className={`text-sm md:text-base font-medium transition-colors
+                className={`w-full text-sm md:text-base text-center transition-colors 
                   ${activeOption === item.value 
-                    ? 'text-gray-900 dark:text-gray-100' 
-                    : 'text-gray-600 dark:text-gray-400'
+                    ? 'text-gray-900 dark:text-gray-100 font-semibold' 
+                    : 'text-gray-600 dark:text-gray-400 font-medium'
                   }`}
               >
                 {item.name}
