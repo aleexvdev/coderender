@@ -17,9 +17,10 @@ import {
   setExportScale,
 } from "@/redux/features/exportSlice";
 import { useDispatch, useSelector } from "react-redux";
-import { ImageDown } from "lucide-react";
+import { Download, ImageDown } from "lucide-react";
 import { motion } from "framer-motion";
 import { AnimatedTabSwitcher } from "@/components/custom/AnimatedTabSwitcher";
+import * as htmlToImage from "html-to-image";
 
 const buttonVariants = {
   hover: { scale: 1.05 },
@@ -41,6 +42,41 @@ const scalesOptions = [
 export const ExportOption = () => {
   const { format, scale } = useSelector((state: RootState) => state.export);
   const dispatch = useDispatch();
+
+  const handleExport = async () => {
+    const node = document.getElementById("code-editor");
+    if (!node) return;
+
+    try {
+      let dataUrl;
+      switch (format) {
+        case "png":
+          dataUrl = await htmlToImage.toPng(node, {
+            pixelRatio: parseInt(scale),
+          });
+          break;
+        case "jpeg":
+          dataUrl = await htmlToImage.toJpeg(node, {
+            pixelRatio: parseInt(scale),
+          });
+          break;
+        case "svg":
+          dataUrl = await htmlToImage.toSvg(node, {
+            pixelRatio: parseInt(scale),
+          });
+          break;
+        default:
+          throw new Error("Unsupported format");
+      }
+
+      const link = document.createElement("a");
+      link.download = `snapcode-export.${format}`;
+      link.href = dataUrl;
+      link.click();
+    } catch (error) {
+      console.error("Export failed:", error);
+    }
+  };
 
   return (
     <Dialog>
@@ -82,6 +118,15 @@ export const ExportOption = () => {
             }}
             className="mt-4 h-max p-1 bg-[#EEEEEE] dark:bg-[#272727]"
           />
+        </div>
+        <div className="w-full flex flex-col items-center">
+          <button
+            className="w-full flex items-center justify-center gap-x-2 text-white bg-blue-800 hover:bg-blue-700 transition-colors rounded-lg py-2"
+            onClick={handleExport}
+          >
+            <Download className="w-5 h-5" />
+            <span className="text-base font-medium">Descargar</span>
+          </button>
         </div>
       </DialogContent>
     </Dialog>

@@ -50,7 +50,7 @@ export const MenuLayout = () => {
       onValueChange={handleTabChange}
       className="fixed bottom-2 left-0 right-0 w-full block lg:hidden"
     >
-      <TabsList className="grid h-12 grid-cols-4 bg-[#dfdfdf] dark:bg-[#272727] border-b mx-2">
+      <TabsList className="grid h-12 grid-cols-4 bg-[#dfdfdf] dark:bg-[#272727] border-b mx-2 md:mx-4 lg:mx-8">
         {tabs.map((tab) => (
           <TabsTrigger
             key={tab.id}
