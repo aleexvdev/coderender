@@ -1,32 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 interface WindowSlice {
-  header: boolean;
-  border: boolean;
+  headerTerminal: string;
+  border: string;
   windowControls: number;
+  watermark: string;
 }
 
 const initialState: WindowSlice = {
-  header: true,
-  border: false,
+  headerTerminal: "show",
+  border: "none",
   windowControls: 1,
+  watermark: "show",
 }
 
 const windowSlice = createSlice({
   name: 'window',
   initialState,
   reducers: {
-    toggleHeader: (state) => {
-      state.header =!state.header;
+    toggleHeaderTerminal: (state) => {
+      state.headerTerminal = state.headerTerminal === "show"? "hide" : "show";
     },
-    toggleBorder: (state) => {
-      state.border = !state.border;
+    setBoder: (state, action) => {
+      state.border = action.payload;
     },
     changeWindowControls: (state, action) => {
       state.windowControls = action.payload;
     },
+    toggleWatermark: (state) => {
+      state.watermark = state.watermark === "show"? "hide" : "show";
+    },
   },
 });
 
-export const { toggleHeader, toggleBorder, changeWindowControls } = windowSlice.actions;
+export const { toggleHeaderTerminal, setBoder, changeWindowControls, toggleWatermark } = windowSlice.actions;
 export default windowSlice.reducer;

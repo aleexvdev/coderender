@@ -35,7 +35,7 @@ export const Header = () => {
           >
             Cod
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
-              eRe
+              eRen
             </span>
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-blue-700 to-blue-800">
               der

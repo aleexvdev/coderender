@@ -1,8 +1,7 @@
 "use client";
 
-import { setPadding } from "@/redux/features/framerSlice";
+import { setFontSize } from "@/redux/features/fontSlice";
 import { RootState } from "@/redux/store";
-import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Select,
@@ -13,51 +12,57 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const paddingOptions = [
-  { value: "0", label: "0px" },
-  { value: "4", label: "4px" },
-  { value: "8", label: "8px" },
-  { value: "16", label: "16px" },
-  { value: "24", label: "24px" },
+const fontSizes = [
+  { value: "12px", label: "12px" },
+  { value: "14px", label: "14px" },
+  { value: "16px", label: "16px" },
+  { value: "18px", label: "18px" },
+  { value: "20px", label: "20px" },
+  { value: "22px", label: "22px" },
+  { value: "24px", label: "24px" },
+  { value: "26px", label: "26px" },
+  { value: "28px", label: "28px" },
+  { value: "30px", label: "30px" },
 ];
 
-export const PaddingSelector = () => {
-  const { padding } = useSelector((state: RootState) => state.framer);
+export const FontSizeSelector = () => {
+
+  const { fontSize } = useSelector((state: RootState) => state.font);
   const dispatch = useDispatch();
 
-  const handlePaddingChange = (value: string) => {
-    dispatch(setPadding(value));
+  const handleFontSizeChange = (value: string) => {
+    dispatch(setFontSize(value));
   };
 
   return (
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
-        htmlFor="paddingLabel"
+        htmlFor="fontsizeLabel"
         className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
         style={{
           width: "60%",
-          paddingLeft: "18px"
+          paddingLeft: "18px",
         }}
       >
-        Padding
+        Font size
       </label>
       <div className="w-full flex items-center justify-center">
         <div
           role="group"
-          id="paddingLabel"
+          id="fontsizeLabel"
           className="flex flex-col gap-1 flex-1 h-full"
         >
           <Select
-            value={padding.toString()}
-            onValueChange={handlePaddingChange}
-            defaultValue={padding.toString()}
+            value={fontSize.toString()}
+            onValueChange={handleFontSizeChange}
+            defaultValue={fontSize.toString()}
           >
             <SelectTrigger className="w-full bg-[#cdcbcb] dark:bg-[#272727]">
-              <SelectValue placeholder={padding + "px"} defaultValue={padding} />
+              <SelectValue placeholder={fontSize} defaultValue={fontSize} />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                {paddingOptions.map((item) => (
+                {fontSizes.map((item) => (
                   <SelectItem key={item.value} value={item.value}>
                     {item.label}
                   </SelectItem>

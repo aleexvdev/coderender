@@ -1,6 +1,6 @@
 "use client";
 
-import { setPadding } from "@/redux/features/framerSlice";
+import { setFontWeight } from "@/redux/features/fontSlice";
 import { RootState } from "@/redux/store";
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,51 +13,50 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-const paddingOptions = [
-  { value: "0", label: "0px" },
-  { value: "4", label: "4px" },
-  { value: "8", label: "8px" },
-  { value: "16", label: "16px" },
-  { value: "24", label: "24px" },
+const fontWeights = [
+  { value: "normal", label: "Normal" },
+  { value: "bold", label: "Bold" },
+  { value: "bolder", label: "Bolder" },
+  { value: "lighter", label: "Lighter" },
 ];
 
-export const PaddingSelector = () => {
-  const { padding } = useSelector((state: RootState) => state.framer);
+export const FontWeightSelector = () => {
+  const { fontWeight } = useSelector((state: RootState) => state.font);
   const dispatch = useDispatch();
 
-  const handlePaddingChange = (value: string) => {
-    dispatch(setPadding(value));
+  const handleFontWeightChange = (value: string) => {
+    dispatch(setFontWeight(value));
   };
 
   return (
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
-        htmlFor="paddingLabel"
+        htmlFor="fontWeightLabel"
         className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
         style={{
           width: "60%",
-          paddingLeft: "18px"
+          paddingLeft: "18px",
         }}
       >
-        Padding
+        Font size
       </label>
       <div className="w-full flex items-center justify-center">
         <div
           role="group"
-          id="paddingLabel"
+          id="fontWeightLabel"
           className="flex flex-col gap-1 flex-1 h-full"
         >
           <Select
-            value={padding.toString()}
-            onValueChange={handlePaddingChange}
-            defaultValue={padding.toString()}
+            value={fontWeight.toString()}
+            onValueChange={handleFontWeightChange}
+            defaultValue={fontWeight.toString()}
           >
             <SelectTrigger className="w-full bg-[#cdcbcb] dark:bg-[#272727]">
-              <SelectValue placeholder={padding + "px"} defaultValue={padding} />
+              <SelectValue placeholder={fontWeight} defaultValue={fontWeight} />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>
-                {paddingOptions.map((item) => (
+                {fontWeights.map((item) => (
                   <SelectItem key={item.value} value={item.value}>
                     {item.label}
                   </SelectItem>
