@@ -1,13 +1,13 @@
 "use client";
 
 import { useDispatch, useSelector } from "react-redux";
-import { setLineNumbers } from "@/redux/features/editorSlice";
+import { toggleLineNumbers } from "@/redux/features/editorSlice";
 import { RootState } from "@/redux/store";
 import { AnimatedTabSwitcher } from "@/components/custom/AnimatedTabSwitcher";
 
 const lineNumbersOptions = [
-  { id: 1, name: "Show", value: "show" },
-  { id: 2, name: "Hide", value: "hide" },
+  { id: 1, name: "Show", value: true },
+  { id: 2, name: "Hide", value: false },
 ];
 
 export const LineNumberSelector = () => {
@@ -32,7 +32,7 @@ export const LineNumberSelector = () => {
       <AnimatedTabSwitcher
         options={lineNumbersOptions}
         activeOption={lineNumbers}
-        onChange={(value) => dispatch(setLineNumbers(value))}
+        onChange={() => dispatch(toggleLineNumbers())}
         className="h-9 p-1 bg-[#EEEEEE] dark:bg-[#272727]"
       />
     </div>

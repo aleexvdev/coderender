@@ -6,8 +6,8 @@ import { RootState } from "@/redux/store";
 import { AnimatedTabSwitcher } from "@/components/custom/AnimatedTabSwitcher";
 
 const headerTerminalOptions = [
-  { id: 1, name: "Show", value: "show" },
-  { id: 2, name: "Hide", value: "hide" },
+  { id: 1, name: "Show", value: true },
+  { id: 2, name: "Hide", value: false },
 ];
 
 export const HeaderTerminal = () => {

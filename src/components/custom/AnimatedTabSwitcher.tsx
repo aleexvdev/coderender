@@ -6,13 +6,13 @@ import { motion } from 'framer-motion';
 interface TabOption {
   id: number | string;
   name: string;
-  value: string;
+  value: string | number | boolean;
 }
 
 interface AnimatedTabSwitcherProps {
   options: TabOption[];
-  activeOption: string;
-  onChange: (value: string) => void;
+  activeOption: string | number | boolean;
+  onChange: (value: string | number | boolean) => void;
   className?: string;
 }
 

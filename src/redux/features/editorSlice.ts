@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 interface EditorSlice {
   language: string;
   theme: string;
-  lineNumbers: string;
+  lineNumbers: boolean;
   lineStart: number;
   lineWrapping: boolean;
   tabName: string;
@@ -12,7 +12,7 @@ interface EditorSlice {
 const initialState: EditorSlice = {
   language: 'javascript',
   theme: 'vsCode',
-  lineNumbers: 'show',
+  lineNumbers: true,
   lineStart: 1,
   lineWrapping: true,
   tabName: "Untitled"
@@ -28,14 +28,14 @@ const editorSlice = createSlice({
     setTheme: (state, action) => {
       state.theme = action.payload;
     },
-    setLineNumbers: (state, action) => {
-      state.lineNumbers = action.payload;
+    toggleLineNumbers: (state) => {
+      state.lineNumbers = !state.lineNumbers;
     },
     setLineStart: (state, action) => {
       state.lineStart = action.payload;
     },
     toggleLineWrapping: (state) => {
-      state.lineWrapping =!state.lineWrapping;
+      state.lineWrapping = !state.lineWrapping;
     },
     setTabName: (state, action) => {
       state.tabName = action.payload;
@@ -43,5 +43,5 @@ const editorSlice = createSlice({
   },
 });
 
-export const { setLanguage, setTheme, setLineNumbers, setLineStart, toggleLineWrapping, setTabName } = editorSlice.actions;
+export const { setLanguage, setTheme, toggleLineNumbers, setLineStart, toggleLineWrapping, setTabName } = editorSlice.actions;
 export default editorSlice.reducer;
