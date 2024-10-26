@@ -1,28 +1,21 @@
 "use client";
 
-import { setBoder } from "@/redux/features/windowSlice";
+import { toggleBorder } from "@/redux/features/windowSlice";
 import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import {
-  Select,
-  SelectContent,
-  SelectGroup,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select";
+import { AnimatedTabSwitcher } from "@/components/custom/AnimatedTabSwitcher";
 
 const bordersOptions = [
-  { value: "none", label: "None" },
-  { value: "glass", label: "Glass" },
+  { id: 1, name: "None", value: false },
+  { id: 2, name: "Glass", value: true },
 ];
 
 export const BorderSelector = () => {
   const { border } = useSelector((state: RootState) => state.window);
   const dispatch = useDispatch();
 
-  const handleBorderChange = (value: string) => {
-    dispatch(setBoder(value));
+  const handleBorderChange = () => {
+    dispatch(toggleBorder());
   };
 
   return (
@@ -37,36 +30,12 @@ export const BorderSelector = () => {
       >
         Border
       </label>
-      <div className="w-full flex items-center justify-center">
-        <div
-          role="group"
-          id="borderLabel"
-          className="flex flex-col gap-1 flex-1 h-full"
-        >
-          <Select
-            value={border.toString()}
-            onValueChange={handleBorderChange}
-            defaultValue={border.toString()}
-          >
-            <SelectTrigger className="w-full bg-[#cdcbcb] dark:bg-[#272727]">
-              <SelectValue
-                placeholder={border}
-                defaultValue={border}
-                className="capitalize"
-              />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                {bordersOptions.map((item) => (
-                  <SelectItem key={item.value} value={item.value}>
-                    {item.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </div>
-      </div>
+      <AnimatedTabSwitcher
+        options={bordersOptions}
+        activeOption={border}
+        onChange={handleBorderChange}
+        className="h-9 p-1 bg-[#EEEEEE] dark:bg-[#272727]"
+      />
     </div>
   );
 };

@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <motion.header
-      className="w-full px-2 md:px-4 lg:mx-8"
+      className="w-full px-2 md:px-4 lg:px-8"
       initial="hidden"
       animate="visible"
       variants={containerVariants}

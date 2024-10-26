@@ -143,7 +143,7 @@ export const CodeEditorModule = () => {
           }}
         >
           <div
-            className="w-full h-full px-4 py-2 overflow-x-auto"
+            className="w-full h-full px-4 py-2"
             style={{
               background: editorTheme?.settings?.background || "transparent",
               borderRadius: radius + "px",
