@@ -49,7 +49,7 @@ export const SettingsOption = () => {
           <AnimatedTabSwitcher
             options={themesOptions}
             activeOption={theme as string}
-            onChange={setTheme}
+            onChange={() => setTheme}
             className="mt-4 h-max p-1 bg-[#EEEEEE] dark:bg-[#272727]"
           />
         </div>

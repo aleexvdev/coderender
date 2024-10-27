@@ -10,7 +10,6 @@ export const OpacitySelector = () => {
   const { opacity } = useSelector((state: RootState) => state.framer);
 
   const handleOpacityChange = (value: number[]) => {
-    // Despacha el valor del slider al store (considerando que es un array con un valor)
     dispatch(setOpacity(value[0]));
   };
 
