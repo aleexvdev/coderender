@@ -35,11 +35,7 @@ export const RadiusSelector = () => {
           <AnimatedTabSwitcher
             options={RADIUS}
             activeOption={radius.toString()}
-            onChange={(value) =>
-              handleRadiusChange(
-                typeof value === "string" ? parseInt(value) : value
-              )
-            }
+            onChange={() => handleRadiusChange(radius)}
             className="h-9 p-1 bg-[#cdcbcb] dark:bg-[#272727]"
           />
         </div>
