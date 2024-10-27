@@ -120,13 +120,17 @@ export const ExportOption = () => {
           />
         </div>
         <div className="w-full flex flex-col items-center">
-          <button
+          {/* <button
             className="w-full flex items-center justify-center gap-x-2 text-white bg-blue-800 hover:bg-blue-700 transition-colors rounded-lg py-2"
             onClick={handleExport}
           >
             <Download className="w-5 h-5" />
             <span className="text-base font-medium">Descargar</span>
-          </button>
+          </button> */}
+          <Button variant={"export"} className="text-base md:text-lg min-h-10 w-full mt-4" onClick={handleExport}>
+            <Download className="w-5 h-5" />
+            Descargar
+          </Button>
         </div>
       </DialogContent>
     </Dialog>
