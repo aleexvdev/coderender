@@ -5,7 +5,12 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Code, Layers3, PanelsTopLeft, RemoveFormatting } from "lucide-react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
-import { EditorModule, FontModule, FramerModule, WindowModule } from "@/modules";
+import {
+  EditorModule,
+  FontModule,
+  FramerModule,
+  WindowModule,
+} from "@/modules";
 
 export const MenuLayout = () => {
   const [activeTab, setActiveTab] = useState<string | null>(null);
@@ -49,6 +54,9 @@ export const MenuLayout = () => {
       value={activeTab || ""}
       onValueChange={handleTabChange}
       className="fixed bottom-2 left-0 right-0 w-full block lg:hidden"
+      style={{
+        zIndex: 49,
+      }}
     >
       <TabsList className="grid h-12 grid-cols-4 bg-[#dfdfdf] dark:bg-[#272727] border-b mx-2 md:mx-4 lg:mx-8">
         {tabs.map((tab) => (
@@ -64,7 +72,7 @@ export const MenuLayout = () => {
         ))}
       </TabsList>
       <motion.div
-        className="absolute bottom-full left-0 right-0 bg-[#dfdfdf] dark:bg-[#1a1a1a] mb-2 rounded-xl mx-2"
+        className="absolute bottom-full left-0 right-0 bg-[#dfdfdf] dark:bg-[#1a1a1a] mb-2 rounded-xl mx-2 md:mx-3"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 0, y: 20 }}
@@ -101,4 +109,4 @@ export const MenuLayout = () => {
       </motion.div>
     </Tabs>
   );
-}
+};

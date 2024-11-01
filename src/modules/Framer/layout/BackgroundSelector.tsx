@@ -88,7 +88,7 @@ export const BackgroundSelector = () => {
                 {BACKGROUNDS.map((background, index) => (
                   <div
                     key={index}
-                    className="cursor-pointer rounded-full w-auto"
+                    className="cursor-pointer rounded-full w-full"
                     onClick={() => handleBackgroundChange(background)}
                   >
                     <span
@@ -104,7 +104,7 @@ export const BackgroundSelector = () => {
                 {COLORS.map((color, index) => (
                   <div
                     key={index}
-                    className="cursor-pointer rounded-full w-10"
+                    className="cursor-pointer rounded-full w-full"
                     onClick={() => handleBackgroundChange(color)}
                   >
                     <span

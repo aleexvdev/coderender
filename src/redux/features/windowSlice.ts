@@ -1,16 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+export type HeaderStyle = 1 | 2 | 3 | 4 | 5
+
 interface WindowSlice {
   headerTerminal: boolean;
   border: boolean;
-  windowControls: number;
+  HeaderStyle: HeaderStyle;
   watermark: boolean;
 }
 
 const initialState: WindowSlice = {
   headerTerminal: true,
   border: false,
-  windowControls: 1,
+  HeaderStyle: 1,
   watermark: false,
 }
 
@@ -24,8 +26,8 @@ const windowSlice = createSlice({
     toggleBorder: (state) => {
       state.border =!state.border;
     },
-    changeWindowControls: (state, action) => {
-      state.windowControls = action.payload;
+    changeHeaderStyle: (state, action) => {
+      state.HeaderStyle = action.payload;
     },
     toggleWatermark: (state) => {
       state.watermark =!state.watermark;
@@ -33,5 +35,5 @@ const windowSlice = createSlice({
   },
 });
 
-export const { toggleHeaderTerminal, toggleBorder, changeWindowControls, toggleWatermark } = windowSlice.actions;
+export const { toggleHeaderTerminal, toggleBorder, changeHeaderStyle, toggleWatermark } = windowSlice.actions;
 export default windowSlice.reducer;

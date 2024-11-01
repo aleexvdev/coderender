@@ -30,7 +30,7 @@ export const Header = () => {
       <div className="w-full">
         <div className="w-full h-16 flex items-center justify-between">
           <motion.div
-            className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800"
+            className="text-2xl md:text-3xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-700 via-blue-600 to-blue-800 select-none"
             whileHover={{ scale: 1.02 }}
           >
             Cod
