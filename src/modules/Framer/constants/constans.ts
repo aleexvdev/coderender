@@ -12,10 +12,10 @@ export const BORDERS = [
 ];
 
 export const RADIUS = [
-  { id: 1, name: "0", value: "0" },
-  { id: 2, name: "8", value: "8" },
-  { id: 3, name: "16", value: "16" },  
-  { id: 4, name: "24", value: "24" },  
+  { id: 1, name: "0", value: 0 },
+  { id: 2, name: "8", value: 8 },
+  { id: 3, name: "16", value: 16 },  
+  { id: 4, name: "24", value: 24 },  
 ];
 
 export const BACKGROUNDS = [

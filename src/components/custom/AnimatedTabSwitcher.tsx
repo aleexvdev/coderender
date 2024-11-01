@@ -61,10 +61,10 @@ export const AnimatedTabSwitcher = ({
               onClick={() => onChange(item.value)}
             >
               <span 
-                className={`w-full text-sm md:text-base text-center transition-colors 
+                className={`w-full text-sm md:text-sm text-center transition-colors 
                   ${activeOption === item.value 
-                    ? 'text-gray-900 dark:text-gray-100 font-semibold' 
-                    : 'text-gray-600 dark:text-gray-400 font-medium'
+                    ? 'text-gray-900 dark:text-gray-100 font-normal' 
+                    : 'text-gray-600 dark:text-gray-400 font-normal'
                   }`}
               >
                 {item.name}

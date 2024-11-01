@@ -18,11 +18,11 @@ export const HeaderStyleSelector = () => {
 
   const renderHeaderStyle = (style: HeaderStyle) => {
     const circleStyle = {
-      width: "12px",
-      height: "12px",
+      width: "9px",
+      height: "9px",
       borderRadius: "50%",
       display: "inline-block",
-      marginRight: "8px",
+      marginRight: "6px",
     };
 
     switch (style) {
@@ -117,15 +117,15 @@ export const HeaderStyleSelector = () => {
           paddingLeft: "18px",
         }}
       >
-        Window Controls
+        Controls
       </label>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <button className="w-full h-9 flex items-center px-2 py-1.5 bg-[#cdcbcb] dark:bg-[#272727] rounded-lg">
             <div className="rounded-sm w-full h-full flex items-center pl-1 justify-start">
               {renderHeaderStyle(HeaderStyle)}
-              <div className="w-full bg-[#d6d6d6] dark:bg-[#404040] rounded-sm px-2 text-sm h-full flex items-center" style={{ marginLeft: "1rem"}}>
-                <div className="flex items-center justify-start">{tabName}</div>
+              <div className="w-full bg-[#d6d6d6] dark:bg-[#404040] rounded-sm px-2 h-full flex items-center" style={{ marginLeft: "1rem"}}>
+                <div className="flex items-center justify-start text-sm">{tabName}</div>
               </div>
             </div>
           </button>

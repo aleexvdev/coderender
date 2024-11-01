@@ -18,7 +18,7 @@ export const RadiusSelector = () => {
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
         htmlFor="radiusLabel"
-        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
+        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-sm md:text-sm"
         style={{
           width: "60%",
           paddingLeft: "18px",
@@ -34,8 +34,8 @@ export const RadiusSelector = () => {
         >
           <AnimatedTabSwitcher
             options={RADIUS}
-            activeOption={radius.toString()}
-            onChange={() => handleRadiusChange(radius)}
+            activeOption={radius}
+            onChange={(value) => handleRadiusChange(value as number)}
             className="h-9 p-1 bg-[#cdcbcb] dark:bg-[#272727]"
           />
         </div>

@@ -36,7 +36,7 @@ export const HeaderTerminal = () => {
           options={headerTerminalOptions}
           activeOption={headerTerminal}
           onChange={handleHeaderTerminalChange}
-          className="h-9 p-1 bg-[#EEEEEE] dark:bg-[#272727]"
+          className="h-9 p-1 bg-[#EEEEEE] dark:bg-[#272727] text-sm"
         />
       </div>
       {

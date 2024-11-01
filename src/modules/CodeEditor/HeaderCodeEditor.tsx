@@ -95,7 +95,7 @@ export const HeaderCodeEditor = () => {
         );
       case 5:
         return (
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px", paddingRight: "10px" }}>
             <Minus
               style={{ width: "20px", height: "20px", color: "#c9c9c9" }}
             />
@@ -125,7 +125,7 @@ export const HeaderCodeEditor = () => {
       {HeaderStyle === 5 ? (
         <>
           <div
-            className="w-max min-w-20 bg-[#303030] dark:bg-[#303030] rounded-md px-2 py-0.5"
+            className="w-max min-w-20 bg-[#303030] dark:bg-[#303030] rounded-md px-2 py-2"
             style={{ marginLeft: "1rem" }}
           >
             <input

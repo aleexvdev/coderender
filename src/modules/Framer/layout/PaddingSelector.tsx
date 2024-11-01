@@ -33,7 +33,7 @@ export const PaddingSelector = () => {
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
         htmlFor="paddingLabel"
-        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
+        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-sm"
         style={{
           width: "60%",
           paddingLeft: "18px"
@@ -53,7 +53,7 @@ export const PaddingSelector = () => {
             defaultValue={padding.toString()}
           >
             <SelectTrigger className="w-full bg-[#cdcbcb] dark:bg-[#272727]">
-              <SelectValue placeholder={padding + "px"} defaultValue={padding} />
+              <SelectValue placeholder={padding + "px"} defaultValue={padding} className="text-sm" />
             </SelectTrigger>
             <SelectContent>
               <SelectGroup>

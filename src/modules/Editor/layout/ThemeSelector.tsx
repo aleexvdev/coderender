@@ -44,7 +44,7 @@ export const ThemeSelector = () => {
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
         htmlFor="themeLabel"
-        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
+        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-sm md:text-sm"
         style={{
           width: "60%",
           paddingLeft: "18px",
@@ -62,7 +62,7 @@ export const ThemeSelector = () => {
             <PopoverTrigger asChild>
               <button className="w-full h-9 flex items-center justify-between px-2 py-1.5 bg-[#cdcbcb] dark:bg-[#272727] rounded-lg">
                 <span
-                  className="font-medium text-sm md:text-base px-2"
+                  className="font-medium text-sm md:text-sm px-2"
                   style={{ textTransform: "capitalize" }}
                 >
                   {theme}

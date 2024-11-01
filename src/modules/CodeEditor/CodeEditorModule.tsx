@@ -13,7 +13,6 @@ import { HeaderCodeEditor } from "./HeaderCodeEditor";
 import { setWidth } from "@/redux/features/exportSlice";
 import { motion } from "framer-motion";
 
-const fontSize = 16;
 const lineWrapping = false;
 const readOnly = false;
 
@@ -26,6 +25,9 @@ export const CodeEditorModule = () => {
   );
   const { headerTerminal, watermark, border } = useSelector(
     (state: RootState) => state.window
+  );
+  const { fontSize, fontWeight } = useSelector(
+    (state: RootState) => state.font
   );
   const { width } = useSelector((state: RootState) => state.export);
   const editorRef = useRef<HTMLDivElement>(null);
@@ -153,10 +155,10 @@ export const CodeEditorModule = () => {
               borderRadius: radius + "px",
               boxShadow: `${
                 border
-                  ? "0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 1px rgba(0,0,0,.9), inset 0 0 0 1.5px rgba(255, 255, 255, .4)"
+                  ? "0 0 0 1px rgba(0, 0, 0, .1), 0 0 0 1px rgba(0,0,0,.9), inset 0 0 0 1.5px rgba(255, 255, 255, 0.653)"
                   : ""
               }`,
-              padding: `${border ? "3px 2px" : "0px"}`,
+              padding: `${border ? "1px 2px" : "0px"}`,
             }}
           >
             {headerTerminal && <HeaderCodeEditor />}
@@ -180,7 +182,8 @@ export const CodeEditorModule = () => {
                 theme={editorTheme}
                 basicSetup={basicSetup}
                 style={{
-                  fontSize,
+                  fontSize: fontSize,
+                  fontWeight: fontWeight,
                   minWidth: "100%",
                   minHeight: "100%",
                   position: "relative",
@@ -198,6 +201,7 @@ export const CodeEditorModule = () => {
                     alignItems: "center",
                     padding: "6px 4px",
                     color: "#6d6d6d",
+                    opacity: 0.5,
                   }}
                 >
                   CodeRender

@@ -44,7 +44,7 @@ export const BackgroundSelector = () => {
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
         htmlFor="backgroundLabel"
-        className="h-9 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
+        className="h-9 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-sm md:text-sm"
         style={{
           width: "60%",
           paddingLeft: "18px",

@@ -34,7 +34,7 @@ export const LanguageSelector = () => {
     <div className="relative w-full pt-2 pb-2 gap-x-2 flex items-center justify-between mb-2">
       <label
         htmlFor="languageLabel"
-        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-base md:text-base"
+        className="h-8 inline-flex relative pl-4 items-center select-none hyphens-auto break-words text-muted-foreground text-sm md:text-sm"
         style={{
           width: "60%",
           paddingLeft: "18px",
@@ -51,7 +51,7 @@ export const LanguageSelector = () => {
           <Popover open={open} onOpenChange={setOpen}>
             <PopoverTrigger asChild>
               <button className="w-full h-9 flex items-center justify-between px-2 py-1.5 bg-[#cdcbcb] dark:bg-[#272727] rounded-lg">
-                <span className="font-medium text-sm md:text-base px-2" style={{ textTransform: "capitalize" }}>{language}</span>
+                <span className="font-medium text-sm md:text-sm px-2" style={{ textTransform: "capitalize" }}>{language}</span>
                 <CaretSortIcon className="h-4 w-4 opacity-50" />
               </button>
             </PopoverTrigger>
