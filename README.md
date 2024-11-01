@@ -34,7 +34,6 @@ Transform your code into beautiful, shareable images in seconds. CodeRender is t
 - **State Management**: Redux Toolkit
 - **Code Editor**: CodeMirror
 - **Animations**: Framer Motion
-- **Testing**: Jest + React Testing Library
 - **Image Processing**: html-to-image
 
 ## 🛠️ Getting Started
