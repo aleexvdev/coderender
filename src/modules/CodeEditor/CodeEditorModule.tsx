@@ -12,6 +12,7 @@ import { color } from "@uiw/codemirror-extensions-color";
 import { HeaderCodeEditor } from "./HeaderCodeEditor";
 import { setWidth } from "@/redux/features/exportSlice";
 import { motion } from "framer-motion";
+import { codeCounter } from "./constants/contants";
 
 const lineWrapping = false;
 const readOnly = false;
@@ -173,11 +174,7 @@ export const CodeEditorModule = () => {
               }}
             >
               <CodeMirror
-                value={
-                  `const enfoque = ["optimización", "mantenibilidad", "escalabilidad", "innovación"];\nconst fortalezas = ["adaptabilidad", "persistencia", "proactividad", "análisis"];\nconst valores = ["comunicación", "eficiencia", "flexibilidad", "integridad"];\n\nconst miMetodo = [...enfoque, ...fortalezas, ...valores];\nconsole.log(` +
-                  '`Integrando estrategias: ${miMetodo.join(", ")}`' +
-                  `);\nconsole.log(hacer(trabajo(), miMetodo)); // Listo! 👽`
-                }
+                value={codeCounter}
                 extensions={extensions}
                 theme={editorTheme}
                 basicSetup={basicSetup}
