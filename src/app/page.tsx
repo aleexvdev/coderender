@@ -8,7 +8,7 @@ export default function Home() {
       <div className="hidden lg:block">
         <CollapsibleSidebar />
       </div>
-      <div className="lg:hidden">
+      <div className="block lg:hidden">
         <MenuLayout />
       </div>
       <div className="w-full h-[calc(100vh-30%)] md:h-full mt-3 lg:ml-20 lg:mt-6 grid place-items-center bg-[#E6E6E6] dark:bg-[#151515] rounded-2xl overflow-auto flex-1">
