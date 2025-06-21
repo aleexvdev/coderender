@@ -1,89 +1,62 @@
-# CodeRender 📸
+# CodeRender ✨
 
-Transform your code into beautiful, shareable images in seconds. CodeRender is the ultimate developer tool for creating stunning code snapshots for social media, documentation, and presentations.
+Crea y comparte imágenes de tu código con un aspecto increíble. CodeRender es una herramienta web que te permite transformar tus fragmentos de código en imágenes elegantes y personalizables, listas para compartir en redes sociales, blogs o en tu documentación.
 
-![Version](https://img.shields.io/badge/version-1.0.0-green)
-![TypeScript](https://img.shields.io/badge/TypeScript-5.0%2B-blue)
-![Next.js](https://img.shields.io/badge/Next.js-14.0%2B-black)
+![CodeRender-UI](public/CodeRender.webp)
 
-## ✨ Features
+## 🚀 Características
 
-- 🎨 **Rich Customization Options**
-  - Multiple window styles (Windows, macOS)
-  - Customizable padding, border radius, and opacity
-  - Various border styles including glass effect
-  - Light/Dark/System theme support
+CodeRender te ofrece un control total sobre la apariencia de tu código:
 
-- 📝 **Advanced Code Editor**
-  - Multiple programming language support
-  - Various syntax highlighting themes
-  - Customizable line numbers
-  - File name tabs support
+-   🎨 **Temas**: Elige entre una amplia variedad de temas para el editor, incluyendo Dracula, VS Code, Tokyo Night, y muchos más.
+-   ↔️ **Estilos de Ventana**: Personaliza la cabecera de la ventana con diferentes estilos, desde el minimalista hasta la apariencia de terminal de macOS.
+-   🖋️ **Fuentes**: Ajusta la familia y el grosor de la fuente para encontrar el estilo que más te guste.
+-   🌈 **Fondos**: Configura fondos con colores sólidos o gradientes y ajusta su opacidad.
+-   🖼️ **Marco**: Controla el padding, radio de los bordes y la visibilidad de la sombra para enmarcar tu código perfectamente.
+-   ⚙️ **Editor**: Muestra u oculta los números de línea y personaliza el nombre del archivo en la pestaña.
+-   💧 **Marca de agua**: Añade una marca de agua a tus creaciones.
+-   📥 **Exportación**: Exporta tus creaciones como imágenes PNG, listas para usar.
 
-- 💾 **Export Flexibility**
-  - Export as PNG, SVG, or JPEG
-  - Multiple scale options (1x, 2x, 3x)
-  - Direct clipboard copy
-  - Easy social media sharing
+## 🛠️ Tecnologías Utilizadas
 
-## 🚀 Tech Stack
+Este proyecto está construido con un stack moderno de tecnologías web:
 
-- **Frontend Framework**: Next.js (Latest Version)
-- **Language**: TypeScript
-- **Styling**: TailwindCSS + Shadcn/UI
-- **State Management**: Redux Toolkit
-- **Code Editor**: CodeMirror
-- **Animations**: Framer Motion
-- **Image Processing**: html-to-image
+-   **Framework**: [Next.js](https://nextjs.org/)
+-   **Librería UI**: [React](https://react.dev/)
+-   **Gestión de Estado**: [Redux Toolkit](https://redux-toolkit.js.org/)
+-   **Estilos**: [Tailwind CSS](https://tailwindcss.com/)
+-   **Componentes UI**: [shadcn/ui](https://ui.shadcn.com/)
+-   **Editor de Código**: [CodeMirror](https://codemirror.net/)
+-   **Animaciones**: [Framer Motion](https://www.framer.com/motion/)
+-   **Exportación a Imagen**: [html-to-image](https://github.com/bubkoo/html-to-image)
+-   **Lenguaje**: [TypeScript](https://www.typescriptlang.org/)
 
-## 🛠️ Getting Started
+## 🏁 Cómo Empezar
 
-```bash
-# Clone the repository
-git clone https://github.com/aleexvdev/coderender.git
+Para ejecutar este proyecto en tu entorno de desarrollo local, sigue estos pasos:
 
-# Install dependencies
-npm install
+1.  **Clona el repositorio:**
+    ```bash
+    git clone https://github.com/tu-usuario/coderender.git
+    cd coderender
+    ```
 
-# Run the development server
-npm run dev
-```
+2.  **Instala las dependencias:**
+    ```bash
+    npm install
+    # o
+    # yarn install
+    # o
+    # pnpm install
+    ```
 
-Visit `http://localhost:3000` to see the application in action.
+3.  **Ejecuta el servidor de desarrollo:**
+    ```bash
+    npm run dev
+    # o
+    # yarn dev
+    # o
+    # pnpm dev
+    ```
 
-## 🌐 Browser Support
-
-CodeRender works seamlessly on all modern browsers:
-- Chrome (Latest)
-- Firefox (Latest)
-- Safari (Latest)
-- Edge (Latest)
-
-## 🤝 Contributing
-
-We welcome contributions!
-
-1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
-
-## 🌐 Deployment
-
-The project is deployed on [Vercel](https://vercel.com), the platform created by the makers of Next.js.
-
-## 💖 Support
-
-Love CodeRender? Please consider giving us a ⭐️ on GitHub!
-
-## 🔗 Links
-
-- [Website](https://coderender.vercel.app)
-- [Report Bug](https://github.com/aleexvdev/coderender/issues)
-- [Request Feature](https://github.com/aleexvdev/coderender/issues)
-
----
-This is a project created for educational and demonstration purposes.
-
-Made with ❤️ by alexvdev, for developers.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver la aplicación.
